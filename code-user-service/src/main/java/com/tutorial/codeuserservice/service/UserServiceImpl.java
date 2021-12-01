@@ -47,13 +47,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<Car> carFindByUserId(Long userId) {
-		List<Car> cars = restTemplate.getForObject("http://localhost:8002/cars/user/" + userId, List.class);
+		List<Car> cars = restTemplate.getForObject("http://car-service/cars/user/" + userId, List.class);
 		return cars;
 	}
 	
 	@Override
 	public List<Bike> bikeFindByUserId(Long userId) {
-		List<Bike> cars = restTemplate.getForObject("http://localhost:8003/bikes/user/" + userId, List.class);
+		List<Bike> cars = restTemplate.getForObject("http://bike-service:8003/bikes/user/" + userId, List.class);
 		return cars;
 	}
 
